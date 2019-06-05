@@ -18,6 +18,12 @@
         case 'getCambios':
                 $obj->data = getCambios();
             break;
+        case 'getClientes':
+                $obj->data = getClientes();
+            break;
+        case 'getProveedors':
+                $obj->data = getProveedors();
+            break;
         default:
             # code...
             break;

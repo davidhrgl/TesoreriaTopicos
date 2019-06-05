@@ -90,6 +90,73 @@
     }
 
 
+        //Obtenemos todo los Clientes
+        function getClientes(){
+        $tesoreria_xml = simplexml_load_file("data/tesoreria.xml");
+        $id;
+        $nombre;
+        $direccion;
+        $telefono;
+        $email;
+        $clientes = array();
+        $atributos = array();
+        foreach ($tesoreria_xml->Clientes as $nclientes) 
+        {
+            foreach ($nclientes->Cliente as $ncliente) {
+                $cliente = array();
+                $atributos = $ncliente->attributes();
+                $id = $atributos[IdCliente];
+                $nombre = $ncliente->Nombre;
+                $direccion = $ncliente->Direccion;
+                $telefono = $ncliente->Tel;
+                $email = $ncliente->Email;
+                //Agregamos a un Array de Tipos de cliente
+                array_push($cliente,$id);
+                array_push($cliente,$nombre);
+                array_push($cliente,$direccion);
+                array_push($cliente,$telefono);
+                array_push($cliente,$email);
+                //Agregamos cada cliente a clientes
+                array_push($clientes,$cliente);
+                $id  = $nombre = $direccion = $telefono = $email = '';
+            }
+        }
+        return $clientes;
+    }
 
+
+    //Obtenemos todo los Proveedors
+        function getProveedors(){
+        $tesoreria_xml = simplexml_load_file("data/tesoreria.xml");
+        $id;
+        $nombre;
+        $direccion;
+        $telefono;
+        $email;
+        $proveedors = array();
+        $atributos = array();
+        foreach ($tesoreria_xml->Proveedores as $nproveedores) 
+        {
+            foreach ($nproveedores->Proveedor as $nproveedor) {
+                $proveedor = array();
+                $atributos = $nproveedor->attributes();
+                $id = $atributos[IdProv];
+                $nombre = $nproveedor->Nombre;
+                $direccion = $nproveedor->Direccion;
+                $telefono = $nproveedor->Tel;
+                $email = $nproveedor->Email;
+                //Agregamos a un Array de Tipos de proveedor
+                array_push($proveedor,$id);
+                array_push($proveedor,$nombre);
+                array_push($proveedor,$direccion);
+                array_push($proveedor,$telefono);
+                array_push($proveedor,$email);
+                //Agregamos cada proveedor a proveedors
+                array_push($proveedors,$proveedor);
+                $id  = $nombre = $direccion = $telefono = $email = '';
+            }
+        }
+        return $proveedors;
+    }
 
 ?>

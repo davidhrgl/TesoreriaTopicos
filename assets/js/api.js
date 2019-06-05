@@ -1,4 +1,4 @@
-function getdata() {
+function getEmpleados() {
     //Estos son los datos que se mandaran al servidor
     var objJSON = {
         funcname: "getEmpleados",
@@ -221,4 +221,90 @@ function deleterow(id){
         },
         function () {
         });
+}
+
+
+function getClientes() {
+    //Estos son los datos que se mandaran al servidor
+    var objJSON = {
+        funcname: "getClientes",
+        filters: {
+            "from": "1",
+            "to": "3CV1"
+        }
+    };
+    datos = objJSON;
+    $.ajax({
+        url: "controller.php",
+        type: "POST",
+        data: JSON.stringify(datos),
+    }).done(function (respuesta) {
+        $("#datatable-clientes").DataTable().destroy();
+        $('#tbody_clientes').empty();
+        var report = "";
+        $.each(respuesta.data, function (index, value) {
+            report += '<tr>';
+            $.each(value, function (index, value2) {
+                if (value2[0] == null) {
+                    report += '<td></td>';
+                } else {
+                    report += '<td>' + value2[0] + '</td>';
+                }
+
+            });
+            report += '</tr>';
+        });
+
+        $('#tbody_clientes').append(report);
+        $('#datatable-clientes').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
+        });
+    });
+}
+
+
+
+
+function getProveedors() {
+    //Estos son los datos que se mandaran al servidor
+    var objJSON = {
+        funcname: "getProveedors",
+        filters: {
+            "from": "1",
+            "to": "3CV1"
+        }
+    };
+    datos = objJSON;
+    $.ajax({
+        url: "controller.php",
+        type: "POST",
+        data: JSON.stringify(datos),
+    }).done(function (respuesta) {
+        $("#datatable-proveedores").DataTable().destroy();
+        $('#tbody_proveedores').empty();
+        var report = "";
+        $.each(respuesta.data, function (index, value) {
+            report += '<tr>';
+            $.each(value, function (index, value2) {
+                if (value2[0] == null) {
+                    report += '<td></td>';
+                } else {
+                    report += '<td>' + value2[0] + '</td>';
+                }
+
+            });
+            report += '</tr>';
+        });
+
+        $('#tbody_proveedores').append(report);
+        $('#datatable-proveedores').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
+        });
+    });
 }

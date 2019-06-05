@@ -18,7 +18,7 @@
 
     <div class="container">
         <div class="table-wrapper">
-            <div class="table-title">
+            <div class="table-title sticky-top">
                 <div class="row">
                     <div class="col-md-6">
 						<h2><b>Tesoreria</b></h2>
@@ -33,11 +33,12 @@
             </div>
 			<div class='clearfix'></div>
 			<hr>
-			<div id="loader"></div><!-- Carga de datos ajax aqui -->
-			<div id="resultados"></div><!-- Carga de datos ajax aqui -->
-			<div class="table-responsive col-md-4"> <!-- Carga de datos ajax de Saldos aqui-->
+			<div class="table-responsive col-md-6"> <!-- Carga de datos ajax de Saldos aqui-->
 				<table id="datatable-saldos" class="table">
 					<thead>
+						<div class="table-success"><div><div>
+						<h2><b>Saldos</b></h2>
+						</div></div></div>
 						<tr>
 							<th>Disponible</th>
 							<th>Fecha</th>
@@ -50,6 +51,9 @@
 			<div class="table-responsive col-md-12"> <!-- Carga de datos ajax de TipoCambio aqui-->
 				<table id="datatable-cambios" class="table">
 						<thead>
+						<div class="table-danger "><div><div>
+						<h2><b>Cambios</b></h2>
+						</div></div></div>
 						<tr class="col-md-12">
 							<th>Dolar</th>
 							<th></th>
@@ -80,8 +84,11 @@
 			</div>
 
 			<div class="table-responsive"> <!-- Carga de datos ajax de Empleados-->
-				<table id="datatable-empleados" class="table display nowrap">
+				<table id="datatable-empleados" class="table">
 					<thead>
+					<div class="table-info "><div><div>
+						<h2><b>Empleados</b></h2>
+						</div></div></div>
 						<tr>
 							<th>Id</th>
 							<th>Tipo</th>
@@ -94,6 +101,43 @@
 					<tbody id="tbody_empleados"></tbody>
 				</table>
 			</div>
+
+			<div class="table-responsive"> <!-- Carga de datos ajax de Clientes-->
+				<table id="datatable-clientes" class="table">
+					<thead>
+					<div class="table-warning"><div><div>
+						<h2><b>Clientes</b></h2>
+						</div></div></div>
+						<tr>
+							<th>Id</th>
+							<th>Nombre</th>
+							<th>Direccion</th>
+							<th>Telefono</th>
+							<th>Email</th>
+						</tr>
+					</thead>
+					<tbody id="tbody_clientes"></tbody>
+				</table>
+			</div>
+
+			<div class="table-responsive"> <!-- Carga de datos ajax de Proveedores-->
+				<table id="datatable-proveedores" class="table">
+					<thead>
+					<div class="table-active"><div><div>
+						<h2><b>Proveedores</b></h2>
+						</div></div></div>
+						<tr>
+							<th>Id</th>
+							<th>Nombre</th>
+							<th>Direccion</th>
+							<th>Telefono</th>
+							<th>Email</th>
+						</tr>
+					</thead>
+					<tbody id="tbody_proveedores"></tbody>
+				</table>
+			</div>
+
         </div>
 	</div>
 
@@ -215,9 +259,11 @@
 	<script src="assets/js/util.js"></script>
 	<script>
 	$(document).ready(function () {
-		getdata();
+		getEmpleados();
 		getSalds();
 		getCamb();
+		getClientes();
+		getProveedors();
 	});
 	</script>
 </body>
