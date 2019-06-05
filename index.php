@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Control de Camiones de Recolecciión</title>
+<title>Control de Tesoreria</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,11 +20,14 @@
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-6">
-						<h2>Control de <b>Camiones de Recoleccón</b></h2>
+                    <div class="col-md-6">
+						<h2><b>Tesoreria</b></h2>
 					</div>
-					<div class="col-sm-6">
-						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addCamionModal"><i class="material-icons">&#xE147;</i>Agregar Camion</button>
+					<div class="col-md-3 float-md-right">
+						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addCamionModal"><i class="material-icons">&#xE147;</i>Agregar Empleado</button>
+					</div>
+					<div class="col-md-3 float-md-right">
+						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addCamionModal"><i class="material-icons">&#xE147;</i>Agregar Proveedor</button>
 					</div>
                 </div>
             </div>
@@ -32,9 +35,52 @@
 			<hr>
 			<div id="loader"></div><!-- Carga de datos ajax aqui -->
 			<div id="resultados"></div><!-- Carga de datos ajax aqui -->
-			<div class='outer_div'></div><!-- Carga de datos ajax aqui -->
-			<div class="table-responsive">
-				<table id="datatable-buttons" class="table">
+			<div class="table-responsive col-md-4"> <!-- Carga de datos ajax de Saldos aqui-->
+				<table id="datatable-saldos" class="table">
+					<thead>
+						<tr>
+							<th>Disponible</th>
+							<th>Fecha</th>
+						</tr>
+					</thead>
+					<tbody id="tbody_saldos"></tbody>
+				</table>
+			</div>
+
+			<div class="table-responsive col-md-12"> <!-- Carga de datos ajax de TipoCambio aqui-->
+				<table id="datatable-cambios" class="table">
+						<thead>
+						<tr class="col-md-12">
+							<th>Dolar</th>
+							<th></th>
+							<th>Euro</th>
+							<th></th>
+							<th>Centenario</th>
+							<th></th>
+							<th>Onza Libertad Oro</th>
+							<th></th>
+							<th>Onza Libertad Plata</th>
+							<th></th>
+						</tr>
+						<tr>
+							<th>Compra</th>
+							<th>Venta</th>
+							<th>Compra</th>
+							<th>Venta</th>
+							<th>Compra</th>
+							<th>Venta</th>
+							<th>Compra</th>
+							<th>Venta</th>
+							<th>Compra</th>
+							<th>Venta</th>
+						</tr>
+						</thead>
+					<tbody id="tbody_cambios"></tbody>
+				</table>
+			</div>
+
+			<div class="table-responsive"> <!-- Carga de datos ajax de Empleados-->
+				<table id="datatable-empleados" class="table display nowrap">
 					<thead>
 						<tr>
 							<th>Id</th>
@@ -45,7 +91,7 @@
 							<th>Email</th>
 						</tr>
 					</thead>
-					<tbody id="tbody_user"></tbody>
+					<tbody id="tbody_empleados"></tbody>
 				</table>
 			</div>
         </div>
@@ -170,6 +216,8 @@
 	<script>
 	$(document).ready(function () {
 		getdata();
+		getSalds();
+		getCamb();
 	});
 	</script>
 </body>

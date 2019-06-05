@@ -1,7 +1,7 @@
 <Tesoreria>
     <Saldo>
         <Disponible>4500</Disponible>
-        <Fecha>2019-06-03 12:00</Fecha>
+        <Fecha>2019-06-03</Fecha>
     </Saldo>
     <TipoCambio>
         <Dolar>
@@ -26,19 +26,19 @@
         </OnzaLibertadPlata>
     </TipoCambio>
     <Empleados>
-        <Empleado IdEmpl='EMPL45' tipoEmp='cajero'>
+        <Empleado IdEmpl='EMPL45' tipoEmp='Cajero'>
             <Nombre>David Hernandez Gonzalez</Nombre>
             <Direccion>Sin Nombre #9</Direccion>
             <Tel>5542980909</Tel>
-            <Email>davidhrgl@gmail.com</Email>
+            <Email>micorreo@gmail.com</Email>
         </Empleado>
-        <Empleado IdEmpl='EMPL46' tipoEmp='cajero'>
+        <Empleado IdEmpl='EMPL46' tipoEmp='Cajero'>
             <Nombre>Ivan Ramirez</Nombre>
             <Direccion>Sin Direccion #4</Direccion>
             <Tel>634643643</Tel>
             <Email>notiene@gmail.com</Email>
         </Empleado>
-        <Empleado IdEmpl='EMPL47' tipoEmp='cajero'>
+        <Empleado IdEmpl='EMPL47' tipoEmp='Cajero'>
             <Nombre>Pepe Pecas</Nombre>
             <Direccion>Sin Direccion #5</Direccion>
             <Tel>633443543543</Tel>

@@ -12,7 +12,12 @@
         case 'getEmpleados':
                 $obj->data = getEmpleados();
             break;
-        
+        case 'getSaldos':
+                $obj->data = getSaldos();
+            break;
+        case 'getCambios':
+                $obj->data = getCambios();
+            break;
         default:
             # code...
             break;

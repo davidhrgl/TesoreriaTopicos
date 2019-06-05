@@ -36,4 +36,60 @@
         }
         return $empleados;
     }
+
+
+    //Parseamos los Saldos
+
+    /*Obtenemos los Saldos*/
+    function getSaldos(){
+        $tesoreria_xml = simplexml_load_file("data/tesoreria.xml");
+        $disponible;
+        $fecha;
+        $saldos = array();
+        foreach ($tesoreria_xml->Saldo as $nsaldo) 
+        {
+            $saldo = array();
+            $disponible = $nsaldo->Disponible;
+            $fecha = $nsaldo->Fecha;
+            //Agregamos al Saldo los elementos
+            array_push($saldo,$disponible);
+            array_push($saldo,$fecha);
+            array_push($saldos,$saldo);
+        }
+        //var_dump($array);
+    return $saldos;
+    }
+
+    /* Obtnemos los tipos de cambios*/
+    function getCambios(){
+        $tesoreria_xml = simplexml_load_file("data/tesoreria.xml");
+        $dolar;
+        $euro;
+        $centenario;
+        $onzaoro;
+        $onzaplata;
+        $cambios = array();
+        foreach ($tesoreria_xml->TipoCambio as $ntipocambio) 
+        {
+            $cambio = array();
+            $dolar = $ntipocambio->Dolar;
+            $euro = $ntipocambio->Euro;
+            $centenario = $ntipocambio->Centenario;
+            $onzaoro = $ntipocambio->OnzaLibertadOro;
+            $onzaplata = $ntipocambio->OnzaLibertadPlata;
+            //Agregamos a un Array de Tipos de Cambios
+            array_push($cambio,$dolar);
+            array_push($cambio,$euro);
+            array_push($cambio,$centenario);
+            array_push($cambio,$onzaoro);
+            array_push($cambio,$onzaplata);
+            //Agregamos al Array de Cambios
+            array_push($cambios,$cambio);
+        }
+        return $cambios;
+    }
+
+
+
+
 ?>
