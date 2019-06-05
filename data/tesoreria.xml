@@ -38,13 +38,19 @@
             <Tel>634643643</Tel>
             <Email>notiene@gmail.com</Email>
         </Empleado>
+        <Empleado IdEmpl='EMPL47' tipoEmp='cajero'>
+            <Nombre>Pepe Pecas</Nombre>
+            <Direccion>Sin Direccion #5</Direccion>
+            <Tel>633443543543</Tel>
+            <Email>notie222.@gmail.com</Email>
+        </Empleado>
     </Empleados>
     <Clientes>
         <Cliente IdCliente='CLI34'>
             <Nombre>Pedro Torres</Nombre>
             <Direccion>Av.SinNombre, Call. Flores #5</Direccion>
             <Tel>4543543543</Tel>
-            <Email>notiene2@gmail.com</Email>
+            <Email>notie2@gmail.com</Email>
         </Cliente>
     </Clientes>
     <Proveedores>

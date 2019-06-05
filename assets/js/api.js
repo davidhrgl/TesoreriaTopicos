@@ -1,16 +1,15 @@
 function getdata() {
     //Estos son los datos que se mandaran al servidor
     var objJSON = {
-        funcname: "rp_vehicles",
+        funcname: "getEmpleados",
         filters: {
-         "idvehicle":"1",
-         "placa": "3CV1",
-         "modelo": "MAN"
+         "from":"1",
+         "to": "3CV1"
         }
     };
     datos = objJSON;
     $.ajax({
-        url: "modelo/controler_rp.php",
+        url: "controller.php",
         type: "POST",
         data: JSON.stringify(datos),
     }).done(function (respuesta) {
@@ -20,17 +19,13 @@ function getdata() {
         $.each(respuesta.data, function (index, value) {
             report += '<tr>';
             $.each(value,function (index,value2) {
-                if (index == 0){
-                    id_vehiculo  = value2;
-                }
-                if (value2 == null){
+                if (value2[0] == null){
                     report += '<td></td>';
                 }else{
-                    report += '<td>' + value2 + '</td>';
+                    report += '<td>' + value2[0] + '</td>';
                 }
                 
             });
-            report += '<td><button type="button" class="btn btn-outline-danger btn-sm" onclick = "deleterow('+id_vehiculo+')">X</button></td>'
             report += '</tr>';
         });
 
@@ -69,7 +64,7 @@ $("#btnaddCamion").click(function () {
     };
     datos = objJSON;
     $.ajax({
-        url: "modelo/controler_add.php",
+        url: "modelo/add_empleado.php",
         type: "POST",
         data: JSON.stringify(datos),
         //dataType: "json"

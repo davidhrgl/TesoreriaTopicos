@@ -37,17 +37,12 @@
 				<table id="datatable-buttons" class="table">
 					<thead>
 						<tr>
-							<th>Id Vehiculo</th>
-							<th>Tipo Camion</th>
-							<th>SubMarca</th>
-							<th>Modelo</th>
-							<th>Kilometraje</th>
-							<th>Placas</th>
-							<th>Economico</th>
-							<th>Numero de contenedores</th>
-							<th>Tipo de Contenedores</th>
-							<th>Capacidad (Ton)</th>
-							<th></th>
+							<th>Id</th>
+							<th>Tipo</th>
+							<th>Nombre</th>
+							<th>Direccion</th>
+							<th>Telefono</th>
+							<th>Email</th>
 						</tr>
 					</thead>
 					<tbody id="tbody_user"></tbody>
@@ -64,7 +59,7 @@
 			<div class="modal-content">
 				<form name="add_camion" id="add_camion">
 					<div class="modal-header">
-						<h4 class="modal-title">Agregar Camión</h4>
+						<h4 class="modal-title">Registrar Movimiento</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">
