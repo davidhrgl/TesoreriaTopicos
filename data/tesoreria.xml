@@ -1,4 +1,4 @@
-<Tesoreria>
+<Tesoreria xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="tesoreria.xsd">
     <Saldo>
         <Disponible>4500.00</Disponible>
         <Fecha>2019-06-03T09:00:00</Fecha>

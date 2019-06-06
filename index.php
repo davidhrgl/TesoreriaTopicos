@@ -23,12 +23,6 @@
                     <div class="col-md-6">
 						<h2><b>Tesoreria</b></h2>
 					</div>
-					<div class="col-md-3 float-md-right">
-						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addCamionModal"><i class="material-icons">&#xE147;</i>Agregar Empleado</button>
-					</div>
-					<div class="col-md-3 float-md-right">
-						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addCamionModal"><i class="material-icons">&#xE147;</i>Agregar Proveedor</button>
-					</div>
                 </div>
             </div>
 			<div class='clearfix'></div>
