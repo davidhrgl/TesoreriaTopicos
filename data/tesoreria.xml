@@ -39,22 +39,40 @@
             <Email>notiene@gmail.com</Email>
         </Empleado>
         <Empleado IdEmpl='EMP47' tipoEmp='Cajero'>
+            <Nombre>Enrique</Nombre>
+            <Direccion></Direccion>
+            <Tel>633443453454343</Tel>
+            <Email>enrique@gmail.com</Email>
+        </Empleado>
+                <Empleado IdEmpl='EMP22' tipoEmp='Cajero'>
+            <Nombre>David Hernandez</Nombre>
+            <Direccion>Sin Direccion</Direccion>
+            <Tel>633442342343</Tel>
+            <Email>hdavid@gmail.com</Email>
+        </Empleado>
+                <Empleado IdEmpl='EMP16' tipoEmp='Cajero'>
             <Nombre>Pepe Pecas</Nombre>
             <Direccion>Sin Direccion #5</Direccion>
             <Tel>633443543543</Tel>
             <Email>notie222.@gmail.com</Email>
         </Empleado>
-        <Empleado IdEmpl='EMP22' tipoEmp='Cajero'>
-            <Nombre>Benito Camel</Nombre>
-            <Direccion>Sin Direccion #4</Direccion>
-            <Tel>6334233534533</Tel>
-            <Email>camelBenito@gmail.com</Email>
+                <Empleado IdEmpl='EMP102' tipoEmp='Cajero'>
+            <Nombre>Julio Mora</Nombre>
+            <Direccion>Sin Direccion</Direccion>
+            <Tel></Tel>
+            <Email>jmora@gmail.com</Email>
         </Empleado>
-        <Empleado IdEmpl='EMP27' tipoEmp='Gerente'>
-            <Nombre>Papa John</Nombre>
-            <Direccion>Sin Direccion #78</Direccion>
-            <Tel>63342335ad533</Tel>
-            <Email>johnpap@gmail.com</Email>
+                <Empleado IdEmpl='EMP78' tipoEmp='Cajero'>
+            <Nombre>Juan Perez</Nombre>
+            <Direccion>Sin Direccion 45</Direccion>
+            <Tel>63344352343</Tel>
+            <Email>jperez@gmail.com</Email>
+        </Empleado>
+                <Empleado IdEmpl='EMP56' tipoEmp='Cajero'>
+            <Nombre>ALejandro Botello</Nombre>
+            <Direccion>Av. POlitécnico #5</Direccion>
+            <Tel>633443543543234234</Tel>
+            <Email>botellin@gmail.com</Email>
         </Empleado>
     </Empleados>
     <Clientes>
@@ -63,6 +81,36 @@
             <Direccion>Av.SinNombre, Call. Flores #5</Direccion>
             <Tel>4543543543</Tel>
             <Email>notie2@gmail.com</Email>
+        </Cliente>
+                <Cliente IdCliente='CLI90'>
+            <Nombre>Elba Pérez</Nombre>
+            <Direccion>Av.JOsafat, Call. Flores #45</Direccion>
+            <Tel>45435sdfsf</Tel>
+            <Email>elbag@gmail.com</Email>
+        </Cliente>
+                <Cliente IdCliente='CLI67'>
+            <Nombre>Fernanda</Nombre>
+            <Direccion>Av.torres, Call. Flores #5</Direccion>
+            <Tel>45434534</Tel>
+            <Email>fersita@gmail.com</Email>
+        </Cliente>
+                <Cliente IdCliente='CLI02'>
+            <Nombre>Antonio Heredia</Nombre>
+            <Direccion>Av.Martin del campo, Call. Flores #5</Direccion>
+            <Tel>5556773435</Tel>
+            <Email>aheredia@atul.com.mx</Email>
+        </Cliente>
+                <Cliente IdCliente='CLI24'>
+            <Nombre>César Rodriquez</Nombre>
+            <Direccion>Av.bosques, Call. Flores #5</Direccion>
+            <Tel>45435435434535</Tel>
+            <Email>rdor@gmail.com</Email>
+        </Cliente>
+                <Cliente IdCliente='CLI11'>
+            <Nombre>Madero Alma</Nombre>
+            <Direccion>Av.centro, Call. Flores #5</Direccion>
+            <Tel>4543543543</Tel>
+            <Email>alma@gmail.com</Email>
         </Cliente>
     </Clientes>
     <Proveedores>
@@ -75,7 +123,7 @@
     </Proveedores>
     <FlujoCaja>
         <Movimiento tipo='Egreso' nMovimiento='M11' rechazado='no'>
-            <Fecha>2019-06-07T14:00:00</Fecha>
+            <Fecha>2019-06-04T14:00:00</Fecha>
             <Transferencia ref='TR123'/>
             <Concepto>PApeleria</Concepto>
             <Empleado IdEmpleado='EMP45'/>
@@ -95,18 +143,40 @@
             <Empleado IdEmpleado='EMP23'/>
             <Cliente IdCliente='CLI32'/>
         </Movimiento>
-        <Movimiento tipo='Egreso' nMovimiento='M17' rechazado='no'>
-            <Fecha>2019-06-13T14:00:00</Fecha>
+         <Movimiento tipo='Ingreso' nMovimiento='M14' rechazado='si'>
+            <Fecha>2019-06-09T16:00:00</Fecha>
+            <Efectivo cantidad='2000'/>
+            <Concepto>Venta de inventario</Concepto>
+            <Empleado IdEmpleado='EMP56'/>
+            <Cliente IdCliente='CLI90'/>
+        </Movimiento>       
+        <Movimiento tipo='Ingreso' nMovimiento='M15' rechazado='si'>
+            <Fecha>2019-06-16T14:00:00</Fecha>
+            <Efectivo cantidad='8000'/>
+            <Concepto>Presupuesto gubernamental</Concepto>
+            <Empleado IdEmpleado='EMP78'/>
+            <Cliente IdCliente='CLI67'/>
+        </Movimiento>       
+        <Movimiento tipo='Egreso' nMovimiento='M16' rechazado='no'>
+            <Fecha>2019-06-13T20:00:00</Fecha>
             <Efectivo cantidad='3000'/>
-            <Concepto>Pago de cajero adjunto</Concepto>
+            <Concepto>Becario</Concepto>
+            <Empleado IdEmpleado='EMP102'/>
+            <Cliente IdCliente='CLI02'/>
+        </Movimiento>      
+         <Movimiento tipo='Egreso' nMovimiento='M17' rechazado='no'>
+            <Fecha>2019-06-28T19:00:00</Fecha>
+            <Efectivo cantidad='6000'/>
+            <Concepto>Pago a personal de ventas</Concepto>
+            <Empleado IdEmpleado='EMP16'/>
+            <Cliente IdCliente='CLI24'/>
+        </Movimiento>  
+             <Movimiento tipo='Egreso' nMovimiento='M18' rechazado='no'>
+            <Fecha>2019-06-21T18:00:00</Fecha>
+            <Efectivo cantidad='5400'/>
+            <Concepto>Asesor</Concepto>
             <Empleado IdEmpleado='EMP22'/>
-        </Movimiento>
-
-        <Movimiento tipo='Egreso' nMovimiento='M18' rechazado='no'>
-            <Fecha>2019-06-28T14:00:00</Fecha>
-            <Cheque Id='CH56'/>
-            <Concepto>Pago a gerente</Concepto>
-            <Empleado IdEmpleado='EMP27'/>
+            <Cliente IdCliente='CLI11'/>
         </Movimiento>
     </FlujoCaja>
 </Tesoreria>
