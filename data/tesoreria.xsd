@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<!-- Estructura general del nodo raíz -->
+
+<xsd:element name='Tesoreria'>
+ <xsd:complexType>
+  <xsd:sequence>
+   <xsd:element name="Saldo" type="TipoSaldo" minOccurs="1" maxOccurs="1"/>
+   <xsd:element name="TipoCambio" type="CambioTipo" minOccurs="1" maxOccurs="1"/>
+	<xsd:element name="Empleados" type="TipoEmpleados" minOccurs="1" maxOccurs="1"/>
+	<xsd:element name="Clientes" type="TipoClientes" minOccurs="1" maxOccurs="1"/>
+	<xsd:element name="Proveedores" type="TipoProveedores" minOccurs="1" maxOccurs="1"/>
+	<xsd:element name="FlujoCaja" type="TipoFlujoCaja" minOccurs="1" maxOccurs="1"/> 
+  </xsd:sequence>
+ </xsd:complexType>
+
+<!-- Llaves primarias -->
+
+<xsd:key name="EmpleadoKey">
+ <xsd:selector xpath="Empleados/Empleado"/>
+ <xsd:field xpath="@IdEmpl"/>
+</xsd:key>
+
+
+<xsd:key name="ClienteKey">
+ <xsd:selector xpath="Clientes/Cliente"/>
+ <xsd:field xpath="@IdCliente"/>
+</xsd:key>
+
+
+<xsd:key name="ProveedorKey">
+ <xsd:selector xpath="Proveedores/Proveedor"/>
+ <xsd:field xpath="@IdProv"/>
+</xsd:key>
+
+<!-- Llaves foráneas -->
+
+
+<xsd:keyref name="EmpleadoKeyRef" refer="EmpleadoKey">
+ <xsd:selector xpath="FlujoCaja/Movimiento/Empleado"/>
+ <xsd:field xpath="@IdEmpleado"/>
+</xsd:keyref>
+
+
+<xsd:keyref name="ClienteKeyRef" refer="ClienteKey">
+ <xsd:selector xpath="FlujoCaja/Movimiento/Cliente"/>
+ <xsd:field xpath="@IdCliente"/>
+</xsd:keyref>
+
+
+
+<xsd:keyref name="ProveedorKeyRef" refer="ProveedorKey">
+ <xsd:selector xpath="FlujoCaja/Movimiento/Proveedor"/>
+ <xsd:field xpath="@IdProveedor"/>
+</xsd:keyref>
+
+
+
+</xsd:element>
+<!-- Termina estructura general del nodo raíz -->
+
+
+<!-- Tipos Complejos -->
+<xsd:complexType name="TipoSaldo">
+ <xsd:sequence>
+  <xsd:element name="Disponible" type="xsd:decimal" minOccurs="1" maxOccurs='1'/>
+  <xsd:element name="Fecha" type="xsd:dateTime" minOccurs="1" maxOccurs='1'/>
+ </xsd:sequence>
+ </xsd:complexType>
+
+<xsd:complexType name="CambioTipo">
+ <xsd:sequence>
+  <xsd:element name="Dolar" type="TipoMoneda" minOccurs="1" maxOccurs='1'/>
+  <xsd:element name="Euro" type="TipoMoneda" minOccurs="1" maxOccurs='1'/>
+  <xsd:element name="Centenario" type="TipoMoneda" minOccurs="1" maxOccurs='1'/>
+  <xsd:element name="OnzaLibertadOro" type="TipoMoneda" minOccurs="1" maxOccurs='1'/>
+  <xsd:element name="OnzaLibertadPlata" type="TipoMoneda" minOccurs="1" maxOccurs='1'/>
+ </xsd:sequence>
+ </xsd:complexType>
+
+
+
+<xsd:complexType name="TipoMoneda">
+ <xsd:sequence>
+  <xsd:element name="Compra" type="xsd:decimal" minOccurs="1" maxOccurs='1'/>
+  <xsd:element name="Venta" type="xsd:decimal" minOccurs="1" maxOccurs='1'/>
+ </xsd:sequence>
+ </xsd:complexType>
+
+
+
+<xsd:complexType name="TipoClientes">
+ <xsd:sequence>
+  <xsd:element name="Cliente" type="TipoCliente" minOccurs="1" maxOccurs='unbounded'/>
+ </xsd:sequence>
+ </xsd:complexType>
+
+
+<xsd:complexType name="TipoCliente">
+ <xsd:sequence>
+  <xsd:element name="Nombre" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+  <xsd:element name="Direccion" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+  <xsd:element name="Tel" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+  <xsd:element name="Email" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+ </xsd:sequence>
+ <xsd:attribute name="IdCliente" type="xsd:string"/>
+</xsd:complexType>
+
+
+
+<xsd:complexType name="TipoEmpleados">
+ <xsd:sequence>
+  <xsd:element name="Empleado" type="TipoEmpleado" minOccurs="1" maxOccurs='unbounded'/>
+ </xsd:sequence>
+ </xsd:complexType>
+
+
+<xsd:complexType name="TipoEmpleado">
+ <xsd:sequence>
+  <xsd:element name="Nombre" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+  <xsd:element name="Direccion" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+  <xsd:element name="Tel" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+  <xsd:element name="Email" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+ </xsd:sequence>
+ <xsd:attribute name="IdEmpl" type="xsd:string"/>
+ <xsd:attribute name="tipoEmp" type="xsd:string"/>
+</xsd:complexType>
+
+
+
+<xsd:complexType name="TipoProveedores">
+ <xsd:sequence>
+  <xsd:element name="Proveedor" type="TipoProveedor" minOccurs="1"/>
+ </xsd:sequence>
+ </xsd:complexType>
+
+
+
+<xsd:complexType name="TipoProveedor">
+ <xsd:sequence>
+  <xsd:element name="Nombre" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+  <xsd:element name="Direccion" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+  <xsd:element name="Tel" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+  <xsd:element name="Email" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+ </xsd:sequence>
+ <xsd:attribute name="IdProv" type="xsd:string"/>
+</xsd:complexType>
+
+
+<xsd:complexType name="TipoFlujoCaja">
+ <xsd:sequence>
+  <xsd:element name="Movimiento" type="TipoMovimiento" minOccurs="1" maxOccurs="unbounded"/>
+ </xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="TipoMovimiento">
+ <xsd:sequence>
+  <xsd:element name="Fecha" type="xsd:dateTime" minOccurs="1" maxOccurs='1'/>
+  <xsd:element name="Transferencia" type="TipoTransferencia" minOccurs="0" maxOccurs='1' /> 
+  <xsd:element name="Cheque" type="TipoCheque" minOccurs="0" maxOccurs='1' /> 
+  <xsd:element name="Efectivo" type="TipoEfectivo" minOccurs="0" maxOccurs='1' /> 
+  <xsd:element name="Concepto" type="xsd:string" minOccurs="1" maxOccurs='1'/>
+  <xsd:element name="Empleado" type="TipoEmpleadoMov" minOccurs="0" maxOccurs='1' /> 
+  <xsd:element name="Proveedor" type="TipoProveedorMov" minOccurs="0" maxOccurs='1' /> 
+  <xsd:element name="Cliente" type="TipoClienteMov" minOccurs="0" maxOccurs='1' /> 
+ </xsd:sequence>
+<xsd:attribute ref='tipo' use="required"/>
+<xsd:attribute name="nMovimiento" type="xsd:string" use="required"/>
+<xsd:attribute ref='rechazado' use="required"/>
+</xsd:complexType>
+
+
+<!-- Atributos con restricciones -->
+<xsd:attribute name="tipo">
+    <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Egreso"/>
+            <xsd:enumeration value="Ingreso"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:attribute>
+
+
+<xsd:attribute name="rechazado">
+    <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="si"/>
+            <xsd:enumeration value="no"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:attribute>
+
+<!-- Elementos vacíos con atributos (llaves foráneas) -->
+
+<xsd:complexType name="TipoTransferencia">
+ <xsd:attribute name="ref" type="xsd:string" use="required"/>
+ </xsd:complexType>
+
+ <xsd:complexType name="TipoCheque">
+ <xsd:attribute name="Id" type="xsd:string" use="required"/>
+ </xsd:complexType>
+
+ <xsd:complexType name="TipoEfectivo">
+ <xsd:attribute name="cantidad" type="xsd:decimal" use="required"/>
+ </xsd:complexType>
+
+<xsd:complexType name="TipoEmpleadoMov">
+ <xsd:attribute name="IdEmpleado" type="xsd:string" use="required"/>
+ </xsd:complexType>
+
+ <xsd:complexType name="TipoProveedorMov">
+ <xsd:attribute name="IdProveedor" type="xsd:string" use="required"/>
+ </xsd:complexType>
+ 
+ <xsd:complexType name="TipoClienteMov">
+ <xsd:attribute name="IdCliente" type="xsd:string" use="required"/>
+ </xsd:complexType>
+
+</xsd:schema>
+
+
