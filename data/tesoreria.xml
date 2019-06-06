@@ -75,7 +75,7 @@
     </Proveedores>
     <FlujoCaja>
         <Movimiento tipo='Egreso' nMovimiento='M11' rechazado='no'>
-            <Fecha>2019-06-04T14:00:00</Fecha>
+            <Fecha>2019-06-07T14:00:00</Fecha>
             <Transferencia ref='TR123'/>
             <Concepto>PApeleria</Concepto>
             <Empleado IdEmpleado='EMP45'/>
