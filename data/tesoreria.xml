@@ -1,44 +1,44 @@
 <Tesoreria>
     <Saldo>
-        <Disponible>$4500.00</Disponible>
-        <Fecha>2019-06-03</Fecha>
+        <Disponible>4500.00</Disponible>
+        <Fecha>2019-06-03T09:00:00</Fecha>
     </Saldo>
     <TipoCambio>
         <Dolar>
-            <Compra>$19.87</Compra>
-            <Venta>$19.50</Venta>
+            <Compra>19.87</Compra>
+            <Venta>19.50</Venta>
         </Dolar>
         <Euro>
-            <Compra>$22.10</Compra>
-            <Venta>$22.00</Venta>
+            <Compra>22.10</Compra>
+            <Venta>22.00</Venta>
         </Euro>
         <Centenario>
-            <Compra>$99.50</Compra>
-            <Venta>$95.00</Venta>
+            <Compra>99.50</Compra>
+            <Venta>95.00</Venta>
         </Centenario>
         <OnzaLibertadOro>
-            <Compra>$150.40</Compra>
-            <Venta>$150.00</Venta>
+            <Compra>150.40</Compra>
+            <Venta>150.00</Venta>
         </OnzaLibertadOro>
         <OnzaLibertadPlata>
-            <Compra>$80.00</Compra>
-            <Venta>$76.00</Venta>
+            <Compra>80.00</Compra>
+            <Venta>76.00</Venta>
         </OnzaLibertadPlata>
     </TipoCambio>
     <Empleados>
-        <Empleado IdEmpl='EMPL45' tipoEmp='Cajero'>
+        <Empleado IdEmpl='EMP23' tipoEmp='Cajero'>
             <Nombre>David Hernandez Gonzalez</Nombre>
             <Direccion>Sin Nombre #9</Direccion>
             <Tel>5542980909</Tel>
             <Email>micorreo@gmail.com</Email>
         </Empleado>
-        <Empleado IdEmpl='EMPL46' tipoEmp='Cajero'>
+        <Empleado IdEmpl='EMP45' tipoEmp='Cajero'>
             <Nombre>Ivan Ramirez</Nombre>
             <Direccion>Sin Direccion #4</Direccion>
             <Tel>634643643</Tel>
             <Email>notiene@gmail.com</Email>
         </Empleado>
-        <Empleado IdEmpl='EMPL47' tipoEmp='Cajero'>
+        <Empleado IdEmpl='EMP47' tipoEmp='Cajero'>
             <Nombre>Pepe Pecas</Nombre>
             <Direccion>Sin Direccion #5</Direccion>
             <Tel>633443543543</Tel>
@@ -46,7 +46,7 @@
         </Empleado>
     </Empleados>
     <Clientes>
-        <Cliente IdCliente='CLI34'>
+        <Cliente IdCliente='CLI32'>
             <Nombre>Pedro Torres</Nombre>
             <Direccion>Av.SinNombre, Call. Flores #5</Direccion>
             <Tel>4543543543</Tel>
@@ -63,22 +63,22 @@
     </Proveedores>
     <FlujoCaja>
         <Movimiento tipo='Egreso' nMovimiento='M11' rechazado='no'>
-            <Fecha>2019-06-04 14:00</Fecha>
+            <Fecha>2019-06-04T14:00:00</Fecha>
             <Transferencia ref='TR123'/>
             <Concepto>PApeleria</Concepto>
-            <Empleado IdEmpleado='EMPL45'/>
+            <Empleado IdEmpleado='EMP45'/>
             <Proveedor IdProveedor='PRO34'/>
         </Movimiento>
         <Movimiento tipo='Ingreso' nMovimiento='M12' rechazado='si'>
+            <Fecha>2019-06-04T11:00:00</Fecha>
             <Cheque Id='CH12'/>
-            <Fecha>2019-06-04 11:00</Fecha>
             <Concepto>Pago de Cliente</Concepto>
             <Empleado IdEmpleado='EMP23'/>
-            <Cliente IdCliente='CLI34'/>
+            <Cliente IdCliente='CLI32'/>
         </Movimiento>
         <Movimiento tipo='Ingreso' nMovimiento='M13' rechazado='no'>
+            <Fecha>2019-06-03T14:00:00</Fecha>
             <Efectivo cantidad='5400'/>
-            <Fecha>2019-06-03 14:00</Fecha>
             <Concepto>Descuento de Proveedor</Concepto>
             <Empleado IdEmpleado='EMP23'/>
             <Cliente IdCliente='CLI32'/>
