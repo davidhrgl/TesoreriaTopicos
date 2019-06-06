@@ -44,6 +44,18 @@
             <Tel>633443543543</Tel>
             <Email>notie222.@gmail.com</Email>
         </Empleado>
+        <Empleado IdEmpl='EMP22' tipoEmp='Cajero'>
+            <Nombre>Benito Camel</Nombre>
+            <Direccion>Sin Direccion #4</Direccion>
+            <Tel>6334233534533</Tel>
+            <Email>camelBenito@gmail.com</Email>
+        </Empleado>
+        <Empleado IdEmpl='EMP27' tipoEmp='Gerente'>
+            <Nombre>Papa John</Nombre>
+            <Direccion>Sin Direccion #78</Direccion>
+            <Tel>63342335ad533</Tel>
+            <Email>johnpap@gmail.com</Email>
+        </Empleado>
     </Empleados>
     <Clientes>
         <Cliente IdCliente='CLI32'>
@@ -82,6 +94,19 @@
             <Concepto>Descuento de Proveedor</Concepto>
             <Empleado IdEmpleado='EMP23'/>
             <Cliente IdCliente='CLI32'/>
+        </Movimiento>
+        <Movimiento tipo='Egreso' nMovimiento='M17' rechazado='no'>
+            <Fecha>2019-06-13T14:00:00</Fecha>
+            <Efectivo cantidad='3000'/>
+            <Concepto>Pago de cajero adjunto</Concepto>
+            <Empleado IdEmpleado='EMP22'/>
+        </Movimiento>
+
+        <Movimiento tipo='Egreso' nMovimiento='M18' rechazado='no'>
+            <Fecha>2019-06-28T14:00:00</Fecha>
+            <Cheque Id='CH56'/>
+            <Concepto>Pago a gerente</Concepto>
+            <Empleado IdEmpleado='EMP27'/>
         </Movimiento>
     </FlujoCaja>
 </Tesoreria>
